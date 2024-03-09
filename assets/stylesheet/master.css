@@ -1,0 +1,130 @@
+@font-face {
+  font-family: exq;
+  src: url(../font/exquisite-corpse.regular.ttf);
+}
+@font-face {
+  font-family: spider;
+  src: url(../font/The\ Graveyard.ttf);
+}
+main {
+  font-family: exq;
+  width: 100%;
+  min-height: 100vh;
+  background-image: radial-gradient(#7E4800, #422500);
+}
+
+.result {
+  background-color: rgba(0, 0, 0, 0.753);
+  z-index: 4;
+  cursor: pointer;
+}
+.result > h4 {
+  color: #FF6D00;
+  font-weight: bolder;
+  font-size: 8rem;
+}
+.result > h6 {
+  color: #FF6D00;
+  font-weight: bolder;
+  font-size: 2.5rem;
+}
+
+.game h1 {
+  font-weight: bolder;
+  font-size: 5rem;
+  color: #FF6D00;
+}
+.game h2 {
+  color: #FFBB89;
+  font-size: 2.3rem;
+  font-family: spider;
+  font-weight: lighter;
+}
+.game .game_container {
+  transform-style: preserve-3d;
+}
+.game .game_container > .row {
+  transform-style: preserve-3d;
+}
+.game .game_container > .row > div {
+  transform-style: preserve-3d;
+}
+.game .game_container > .row > div > div {
+  height: 200px;
+  border: 2px solid #FF6D00;
+  transform-style: preserve-3d;
+  transition: 1s;
+}
+.game .game_container > .row > div > div .flip {
+  transform: perspective(8000px) rotateY(-180deg);
+  transform-origin: center;
+}
+.game .game_container > .row > div > div .flip figure:nth-of-type(1) {
+  z-index: 1;
+}
+.game .game_container > .row > div figure {
+  color: #FFBB89;
+}
+.game .game_container > .row > div figure:hover .row > div > span {
+  width: 55px;
+  height: 55px;
+  transform: scalex(1.2);
+}
+.game .game_container > .row > div figure:hover img {
+  transform: translate(-50%, -72%);
+  width: 120px;
+}
+.game .game_container > .row > div figure img {
+  transform: translate(-50%, -80%);
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 110px;
+  transition: 1s;
+  animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+.game .game_container > .row > div figure > .row {
+  align-content: space-between;
+}
+.game .game_container > .row > div figure > .row > div:nth-of-type(1) {
+  transform: scalex(-1);
+}
+.game .game_container > .row > div figure > .row > div:nth-of-type(1) span:nth-of-type(1) {
+  transform: scalex(-1);
+}
+.game .game_container > .row > div figure > .row > div:nth-of-type(2) {
+  transform: scale(-1);
+}
+.game .game_container > .row > div figure > .row > div:nth-of-type(2) span:nth-of-type(1) {
+  transform: scalex(-1);
+}
+.game .game_container > .row > div figure > .row > div span {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  transition: 1s;
+}
+.game .game_container > .row > div figure:nth-of-type(1) {
+  background-color: #FFBB89;
+  transform: rotatey(180deg);
+}
+.game .game_container > .row > div figure:nth-of-type(1) img {
+  transform: translate(-50%, -60%);
+}
+.game .game_container > .row > div figure:nth-of-type(1) span {
+  background-image: url(../img/CobwebGrey.png);
+}
+.game .game_container > .row > div figure:nth-of-type(2) span {
+  background-image: url(../img/Cobweb.png);
+}
+
+@keyframes anim {
+  0% {
+    transform: translate(-50%, -60%) rotatez(-10deg);
+  }
+  50% {
+    transform: translate(-50%, -60%) rotatez(10deg);
+  }
+  100% {
+    transform: translate(-50%, -60%) rotatez(-10deg);
+  }
+}/*# sourceMappingURL=master.css.map */

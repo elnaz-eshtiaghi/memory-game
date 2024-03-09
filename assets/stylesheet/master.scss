@@ -1,0 +1,185 @@
+$color1 : #FF6D00;
+$color2 : #7E4800;
+$color3 : #422500;
+$color4 : #FFBB89;
+
+@font-face {
+    font-family:exq ;
+    src: url(../font/exquisite-corpse.regular.ttf);
+}
+@font-face {
+    font-family:spider ;
+    src: url(../font/The\ Graveyard.ttf);
+}
+
+main {
+    font-family: exq;
+    width: 100%;
+    min-height: 100vh;
+    background-image: radial-gradient(#7E4800, #422500);
+}
+.result{
+    background-color: rgba(0, 0, 0, 0.753);
+    z-index: 4;
+    cursor: pointer;
+    >h4{
+        color: $color1;
+        font-weight: bolder;
+        font-size: 8rem;
+    }
+    >h6{
+        color: $color1;
+        font-weight: bolder;
+        font-size: 2.5rem;
+    }
+}
+.game {
+    h1 {
+        font-weight: bolder;
+        font-size: 5rem;
+        color: $color1;
+    }
+
+    h2 {
+        color: $color4;
+        font-size: 2.3rem;
+        font-family: spider;
+        font-weight: lighter;
+    }
+
+    .game_container {
+        transform-style: preserve-3d;
+
+        >.row {
+            transform-style: preserve-3d;
+
+            >div {
+                transform-style: preserve-3d;
+
+                >div {
+                    height: 200px;
+                    border: 2px solid $color1;
+                    transform-style: preserve-3d;
+                    transition: 1s;
+
+                    .flip {
+                        transform: perspective(8000px) rotateY(-180deg);
+                        transform-origin: center;
+
+                        figure {
+                            &:nth-of-type(1) {
+                                z-index: 1;
+                            }
+                        }
+                    }
+
+
+                }
+
+                // ....card.....
+
+                figure {
+
+                    color: #FFBB89;
+                    &:hover {
+                        .row>div>span {
+                            width: 55px;
+                            height: 55px;
+                            transform: scalex(1.2);
+                            
+                        }
+
+                        img {
+                            transform: translate((-50%, -72%));
+                            width: 120px;
+                        }
+                    }
+                    img {
+                        transform: translate((-50%, -80%));
+                        object-fit: cover;
+                        width: 110px;
+                        transition: 1s;
+                        animation: name duration timing-function delay iteration-count direction fill-mode;
+                        
+                    }
+
+                    >.row {
+                        align-content: space-between;
+                    }
+
+                    >.row>div {
+                        &:nth-of-type(1) {
+                            transform: scalex(-1);
+
+                            span {
+                                &:nth-of-type(1) {
+                                    transform: scalex(-1);
+                                }
+                            }
+
+                        }
+
+                        &:nth-of-type(2) {
+                            transform: scale(-1);
+
+                            span {
+                                &:nth-of-type(1) {
+                                    transform: scalex(-1);
+                                }
+                            }
+                        }
+
+                        span {
+                            
+                            width: 50px;
+                            height: 50px;
+                            background-size: cover;
+                            transition: 1s;
+
+                        }
+
+                        
+                    }
+
+                    // .....back.....
+
+                    &:nth-of-type(1) {
+                        background-color: #FFBB89;
+                        transform: rotatey(180deg);
+                        img {
+                            transform: translate((-50%, -60%));
+                            
+                        }
+
+                        span {
+                            background-image: url(../img/CobwebGrey.png);
+                        }
+
+                    }
+
+                    // .....front.....
+
+
+                    &:nth-of-type(2) {
+                        span {
+                            background-image: url(../img/Cobweb.png);
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+@keyframes anim {
+    0%{
+        transform:translate((-50%, -60%)) rotatez(-10deg);
+    }
+    50%{
+        transform:translate((-50%, -60%)) rotatez(10deg);
+    }
+    100%{
+        transform:translate((-50%, -60%)) rotatez(-10deg);
+    }
+    
+}
